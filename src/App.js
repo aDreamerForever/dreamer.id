@@ -18,7 +18,7 @@ function App() {
             </header>
 
             <footer className="App-footer">
-                <p className="footer-text">CodeSpaceProduction 2021</p>
+                <p className="footer-text">Alvin Tanoto 2021</p>
                 <a
                     href="https://id.linkedin.com/in/alvin-tanoto-662537152"
                     target="_blank"
