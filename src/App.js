@@ -3,7 +3,7 @@ import "./App.css";
 
 function App() {
     return (
-        <div className="App">
+        <div className="App no-select">
             <header className="App-header">
                 <p>Dreamer.id</p>
 
