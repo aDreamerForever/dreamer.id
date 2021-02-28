@@ -38,6 +38,8 @@ const NavMobile = (props) => {
         textDecoration: "none",
         color: "#263F60",
         transition: "all 0.1s ease-in",
+        fontSize: "3vh",
+
         [mqx[3]]: {
             padding: "0.5vh 1vh",
             margin: "3vh 2vh",
@@ -84,7 +86,6 @@ const NavMobile = (props) => {
                 ${props.fadeOut} 0.25s ease-out
             `;
         } else {
-            console.log("msk sni kan");
             return css`
                 ${props.fadeIn} 0.25s ease-in
             `;

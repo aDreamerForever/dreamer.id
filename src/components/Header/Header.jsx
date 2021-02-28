@@ -12,7 +12,7 @@ import HeaderWeb from "./HeaderWeb";
 const Header = (props) => {
     let active = props.active;
 
-    const isMobile = useMediaQuery({ query: "(max-device-width: 768px)" });
+    const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
     return (
         <div>
             {!isMobile ? (

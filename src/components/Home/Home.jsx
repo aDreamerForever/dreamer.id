@@ -13,9 +13,7 @@ const Home = () => {
     let [runFadeOutTransition, setFadeOutTransition] = useState(false);
     let [isMenuOpen, setMenuOpen] = useState(false);
 
-    useEffect(() => {
-        console.log("re rendered", isMenuOpen);
-    }, [isMenuOpen]);
+    useEffect(() => {}, [isMenuOpen]);
 
     const active = "home";
     const breakpoints = [320, 425, 768, 1024];
@@ -51,7 +49,6 @@ const Home = () => {
         if (isMenuOpen) {
             setFadeOutTransition(true);
             setTimeout(() => {
-                console.log("run after 1000s");
                 setFadeOutTransition(false);
                 setMenuOpen(false);
             }, 250);
