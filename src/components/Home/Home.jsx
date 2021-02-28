@@ -51,7 +51,7 @@ const Home = () => {
             setTimeout(() => {
                 setFadeOutTransition(false);
                 setMenuOpen(false);
-            }, 250);
+            }, 100);
         } else {
             setMenuOpen(true);
         }
