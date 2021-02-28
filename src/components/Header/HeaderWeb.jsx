@@ -15,6 +15,8 @@ const HeaderWeb = (props) => {
         padding: "5vh",
         zIndex: 1,
         right: 0,
+        color: "#263F60",
+        textDecoration: "none",
         [mqx[0]]: {
             display: "none",
         },
