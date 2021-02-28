@@ -1,43 +1,24 @@
-import logo from "./logo.svg";
-import "./App.css";
+import Home from "./components/Home/Home";
+import About from "./components/About/About";
+import Contact from "./components/Contact/Contact";
+
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 function App() {
     return (
-        <div className="App no-select">
-            <header className="App-header">
-                <p>Dreamer.id</p>
+        <div>
+            <style>
+                @import
+                url('https://fonts.googleapis.com/css?family=Montserrat');
+            </style>
 
-                <img
-                    src="/under_construction.svg"
-                    className="construction_image"
-                />
-
-                <p>
-                    This site is under construction, please come back later :)
-                </p>
-            </header>
-
-            <footer className="App-footer">
-                <p className="footer-text">Alvin Tanoto 2021</p>
-                <a
-                    href="https://id.linkedin.com/in/alvin-tanoto-662537152"
-                    target="_blank"
-                >
-                    <img
-                        className="footer-image"
-                        src="/linkedin.png"
-                        width="20px"
-                    />
-                </a>
-
-                <a href="https://www.instagram.com/alvint2497/" target="_blank">
-                    <img
-                        className="footer-image"
-                        src="/instagram.png"
-                        width="20px"
-                    />
-                </a>
-            </footer>
+            <BrowserRouter>
+                <Switch>
+                    <Route exact path="/" component={Home}></Route>
+                    <Route exact path="/about" component={About}></Route>
+                    <Route exact path="/contact" component={Contact}></Route>
+                </Switch>
+            </BrowserRouter>
         </div>
     );
 }
