@@ -57,7 +57,7 @@ const LandingPage = (props) => {
 
     let particleCss = {
         position: "absolute",
-        height: "100vh",
+        height: "100vh!important",
         width: "100vw",
         zIndex: 0,
     };
@@ -66,7 +66,6 @@ const LandingPage = (props) => {
         zIndex: 3,
     };
 
-    console.log(Particle);
     return (
         <div
             css={css`

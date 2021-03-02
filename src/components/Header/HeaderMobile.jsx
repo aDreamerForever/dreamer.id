@@ -9,7 +9,7 @@ const HeaderMobile = (props) => {
     let globalCss = {
         position: "fixed",
         padding: "5vh",
-        zIndex: 1,
+        zIndex: 4,
         right: 0,
     };
 
