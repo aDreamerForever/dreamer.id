@@ -131,7 +131,7 @@ const NavMobile = (props) => {
                     Home
                 </Link>
                 <Link
-                    to="/about"
+                    to="#"
                     css={css`
                         ${textCss}
                         ${hoverCss}
@@ -141,7 +141,7 @@ const NavMobile = (props) => {
                     About
                 </Link>
                 <Link
-                    to="/contact"
+                    to="#"
                     css={css`
                         ${textCss}
                         ${hoverCss}

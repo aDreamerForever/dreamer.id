@@ -97,7 +97,7 @@ const HeaderWeb = (props) => {
             </Link>
             |
             <Link
-                to="/about"
+                to="#"
                 css={css`
                     ${textCss}
                     ${hoverCss}
@@ -108,7 +108,7 @@ const HeaderWeb = (props) => {
             </Link>
             |
             <Link
-                to="/contact"
+                to="#"
                 css={css`
                     ${textCss}
                     ${hoverCss}
