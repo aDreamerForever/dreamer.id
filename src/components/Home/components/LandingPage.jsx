@@ -3,6 +3,8 @@
 
 import React, { useEffect, useState } from "react";
 import { css, jsx, keyframes, withTheme } from "@emotion/react";
+import Particles from "react-particles-js";
+import Particle from "../../../configs/particle";
 
 const LandingPage = (props) => {
     let mq = props.mq;
@@ -15,6 +17,7 @@ const LandingPage = (props) => {
         fontSize: "calc(0.75em + 6.5vh)",
         color: "#263F60",
         flexDirection: "column",
+        zIndex: 3,
         [mq[0]]: {
             fontSize: "2.5em",
         },
@@ -37,6 +40,7 @@ const LandingPage = (props) => {
         fontFamily: "Montserrat",
         color: "#263F60",
         flexDirection: "column",
+        zIndex: 3,
         [mq[0]]: {
             fontSize: "0.45em",
         },
@@ -51,20 +55,51 @@ const LandingPage = (props) => {
         },
     };
 
+    let particleCss = {
+        position: "absolute",
+        height: "100vh",
+        width: "100vw",
+        zIndex: 0,
+    };
+
+    let homeTextIndexCss = {
+        zIndex: 3,
+    };
+
+    console.log(Particle);
     return (
         <div
             css={css`
-                animation: ${props.fadeIn} 0.25s ease-in;
-                ${homeTextCss}
+                position: relative;
             `}
         >
-            Dreamer.id
+            <Particles
+                params={Particle}
+                css={css`
+                    ${particleCss}
+                `}
+            />
+
             <div
                 css={css`
-                    ${homeSubTextCss}
+                    animation: ${props.fadeIn} 0.25s ease-in;
+                    ${homeTextCss}
                 `}
             >
-                By Alvin Tanoto
+                <span
+                    css={css`
+                        ${homeTextIndexCss}
+                    `}
+                >
+                    Dreamer.id
+                </span>
+                <div
+                    css={css`
+                        ${homeSubTextCss}
+                    `}
+                >
+                    By Alvin Tanoto
+                </div>
             </div>
         </div>
     );
