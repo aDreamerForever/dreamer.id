@@ -81,7 +81,7 @@ const LandingPage = (props) => {
 
             <div
                 css={css`
-                    animation: ${props.fadeIn} 0.25s ease-in;
+                    animation: ${props.fadeIn} 0.5s ease-in;
                     ${homeTextCss}
                 `}
             >
