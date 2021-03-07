@@ -1,11 +1,68 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
+
 import React, { useEffect, useState } from "react";
+import { css, jsx, keyframes } from "@emotion/react";
+
+import Header from "../Header/Header";
+import NavMobile from "../NavigationMenu/NavMobile";
 import { Link } from "react-router-dom";
 
 import "./construction.css";
 
-const Construction = () => {
+const Construction = (props) => {
+    let [runFadeOutTransition, setFadeOutTransition] = useState(false);
+    let [isMenuOpen, setMenuOpen] = useState(false);
+
+    let fadeIn = keyframes`
+        from, 0%, to {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }`;
+
+    let fadeOut = keyframes`
+    from, 0%, to {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }`;
+
+    let menuHandler = () => {
+        if (isMenuOpen) {
+            setFadeOutTransition(true);
+            setTimeout(() => {
+                setFadeOutTransition(false);
+                setMenuOpen(false);
+            }, 100);
+        } else {
+            setMenuOpen(true);
+        }
+    };
+
     return (
         <div className="App">
+            {isMenuOpen ? (
+                <NavMobile
+                    fadeIn={fadeIn}
+                    fadeOut={fadeOut}
+                    menuHandler={menuHandler}
+                    isMenuOpen={isMenuOpen}
+                    runFadeOutTransition={runFadeOutTransition}
+                    active={props.active}
+                />
+            ) : (
+                ""
+            )}
+
+            <Header
+                active={props.active}
+                menuHandler={menuHandler}
+                isMenuOpen={isMenuOpen}
+            />
+
             <header className="App-header">
                 <p>Dreamer.id</p>
 
