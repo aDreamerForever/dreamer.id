@@ -8,21 +8,17 @@ import Header from "../Header/Header";
 
 import LandingPage from "./components/LandingPage";
 import NavMobile from "../NavigationMenu/NavMobile";
+import DreamerPage from "./components/DreamerPage";
 
-const Home = () => {
+const Home = (props) => {
     let [runFadeOutTransition, setFadeOutTransition] = useState(false);
     let [isMenuOpen, setMenuOpen] = useState(false);
 
-    useEffect(() => {}, [isMenuOpen]);
-
     const active = "home";
-    const breakpoints = [320, 425, 768, 1024];
+    const breakpoints = [320, 425, 768, 1024, 1440];
 
     const mq = breakpoints.map((bp) => `@media (min-width: ${bp}px)`);
-
-    let homeBackgroundCss = {
-        backgroundImage: "linear-gradient(180deg,#E4EBE0,#FFFFFF 100%)",
-    };
+    const mx = breakpoints.map((bp) => `@media (max-width: ${bp}px)`);
 
     let globalCss = {
         fontFamily: "Montserrat",
@@ -63,31 +59,33 @@ const Home = () => {
                 ${globalCss}
             `}
         >
-            <div
-                css={css`
-                    ${homeBackgroundCss}
-                `}
-            >
-                {isMenuOpen ? (
-                    <NavMobile
-                        fadeIn={fadeIn}
-                        fadeOut={fadeOut}
-                        menuHandler={menuHandler}
-                        isMenuOpen={isMenuOpen}
-                        runFadeOutTransition={runFadeOutTransition}
-                        active={active}
-                    />
-                ) : (
-                    ""
-                )}
-
-                <Header
-                    active={active}
+            {isMenuOpen ? (
+                <NavMobile
+                    fadeIn={fadeIn}
+                    fadeOut={fadeOut}
                     menuHandler={menuHandler}
                     isMenuOpen={isMenuOpen}
+                    runFadeOutTransition={runFadeOutTransition}
+                    active={active}
                 />
-                <LandingPage mq={mq} fadeIn={fadeIn} />
-            </div>
+            ) : (
+                ""
+            )}
+
+            <Header
+                active={active}
+                menuHandler={menuHandler}
+                isMenuOpen={isMenuOpen}
+            />
+            <LandingPage
+                mq={mq}
+                fadeIn={fadeIn}
+                css={css`
+                    marginbottom: 100px;
+                `}
+            />
+
+            <DreamerPage mx={mx} isMenuOpen={isMenuOpen} />
         </div>
     );
 };
