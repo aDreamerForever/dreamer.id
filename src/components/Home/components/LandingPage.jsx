@@ -16,6 +16,7 @@ const LandingPage = (props) => {
         justifyContent: "center",
         fontSize: "calc(0.75em + 6.5vh)",
         color: "#263F60",
+        backgroundImage: "linear-gradient(180deg,#E4EBE0,#FFFFFF 100%) ",
         flexDirection: "column",
         zIndex: 3,
         [mq[0]]: {
@@ -58,7 +59,7 @@ const LandingPage = (props) => {
     let particleCss = {
         position: "absolute",
         height: "100vh!important",
-        width: "100vw",
+        width: "100%",
         zIndex: 0,
     };
 
@@ -81,13 +82,13 @@ const LandingPage = (props) => {
 
             <div
                 css={css`
-                    animation: ${props.fadeIn} 0.5s ease-in;
                     ${homeTextCss}
                 `}
             >
                 <span
                     css={css`
                         ${homeTextIndexCss}
+                        animation: ${props.fadeIn} 0.5s ease-in;
                     `}
                 >
                     Dreamer.id
@@ -95,6 +96,7 @@ const LandingPage = (props) => {
                 <div
                     css={css`
                         ${homeSubTextCss}
+                        animation: ${props.fadeIn} 0.5s ease-in;
                     `}
                 >
                     By Alvin Tanoto

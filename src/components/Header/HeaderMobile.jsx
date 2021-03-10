@@ -34,6 +34,7 @@ const HeaderMobile = (props) => {
                         ${imageCss}
                     `}
                     onClick={props.menuHandler}
+                    alt="menu_icon"
                 />
             ) : (
                 " "

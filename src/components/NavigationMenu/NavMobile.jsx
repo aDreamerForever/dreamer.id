@@ -6,9 +6,8 @@ import { css, jsx, keyframes } from "@emotion/react";
 import { Link } from "react-router-dom";
 
 const NavMobile = (props) => {
-    const breakpoints = [320, 425, 768, 1024];
+    const breakpoints = [320, 425, 768, 1024, 1440];
     const mqx = breakpoints.map((bp) => `@media (max-width: ${bp}px)`); //mediaquery max
-    const mqn = breakpoints.map((bp) => `@media (min-width: ${bp}px)`); //mediaquery min
 
     let globalCss = {
         position: "fixed",
@@ -43,7 +42,7 @@ const NavMobile = (props) => {
         [mqx[3]]: {
             padding: "0.5vh 1vh",
             margin: "3vh 2vh",
-            fontSize: "3vh",
+            fontSize: "2vh",
         },
     };
 
@@ -113,6 +112,7 @@ const NavMobile = (props) => {
                     ${imageCss}
                 `}
                 onClick={props.menuHandler}
+                alt="cross_icon"
             />
 
             <div
@@ -131,7 +131,7 @@ const NavMobile = (props) => {
                     Home
                 </Link>
                 <Link
-                    to="#"
+                    to="/about"
                     css={css`
                         ${textCss}
                         ${hoverCss}
@@ -141,7 +141,7 @@ const NavMobile = (props) => {
                     About
                 </Link>
                 <Link
-                    to="#"
+                    to="/contact"
                     css={css`
                         ${textCss}
                         ${hoverCss}
