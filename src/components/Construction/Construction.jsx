@@ -74,7 +74,6 @@ const Construction = (props) => {
                 <p>
                     This site is under construction, please come back later :)
                 </p>
-                <Link to="/"> or click this link to go back </Link>
             </header>
 
             <footer className="App-footer">

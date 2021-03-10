@@ -85,7 +85,7 @@ const Home = (props) => {
                 `}
             />
 
-            <DreamerPage mx={mx} isMenuOpen={isMenuOpen} />
+            {/* <DreamerPage mx={mx} isMenuOpen={isMenuOpen} /> */}
         </div>
     );
 };
